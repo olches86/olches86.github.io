@@ -36,14 +36,14 @@
                 border-radius: 25px;
                 width: 50%;
                 height: 30px;
-                background: gold;
+                background: silver;
                 padding: 8px;
             }
             #progress-bar-fill {
                 border-radius: 25px;
                 width: 0%;
                 height: 100%;
-                background: blue;
+                background: green;
             }
         </style>
     </head>
@@ -132,18 +132,18 @@
                     bridge.game.on('visibility_state_changed', state => sendMessageToUnity('OnVisibilityStateChanged', state))
 
                     let unityLoader = document.createElement('script')
-                    unityLoader.src = 'Build/webGL.loader.js'
+                    unityLoader.src = 'Build/webGl.loader.js'
                     unityLoader.onload = () => {
                         createUnityInstance(
                             canvas,
                             {
-                                dataUrl: 'Build/webGL.data.unityweb',
-                                frameworkUrl: 'Build/webGL.framework.js.unityweb',
-                                codeUrl: 'Build/webGL.wasm.unityweb',
+                                dataUrl: 'Build/webGl.data.unityweb',
+                                frameworkUrl: 'Build/webGl.framework.js.unityweb',
+                                codeUrl: 'Build/webGl.wasm.unityweb',
                                 streamingAssetsUrl: 'StreamingAssets',
                                 companyName: 'cheOGames',
                                 productName: 'Alyonushka_s Adventures',
-                                productVersion: '1.0.5',
+                                productVersion: '1.0.7',
                                 // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                                 // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
                             },
