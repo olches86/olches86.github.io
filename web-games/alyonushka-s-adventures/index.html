@@ -132,14 +132,14 @@
                     bridge.game.on('visibility_state_changed', state => sendMessageToUnity('OnVisibilityStateChanged', state))
 
                     let unityLoader = document.createElement('script')
-                    unityLoader.src = 'Build/webGl.loader.js'
+                    unityLoader.src = 'Build/WEBGL.loader.js'
                     unityLoader.onload = () => {
                         createUnityInstance(
                             canvas,
                             {
-                                dataUrl: 'Build/webGl.data.unityweb',
-                                frameworkUrl: 'Build/webGl.framework.js.unityweb',
-                                codeUrl: 'Build/webGl.wasm.unityweb',
+                                dataUrl: 'Build/WEBGL.data.unityweb',
+                                frameworkUrl: 'Build/WEBGL.framework.js.unityweb',
+                                codeUrl: 'Build/WEBGL.wasm.unityweb',
                                 streamingAssetsUrl: 'StreamingAssets',
                                 companyName: 'cheOGames',
                                 productName: 'Alyonushka_s Adventures',
