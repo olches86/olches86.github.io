@@ -132,18 +132,18 @@
                     bridge.game.on('visibility_state_changed', state => sendMessageToUnity('OnVisibilityStateChanged', state))
 
                     let unityLoader = document.createElement('script')
-                    unityLoader.src = 'Build/WEBGL.loader.js'
+                    unityLoader.src = 'Build/WebGL.loader.js'
                     unityLoader.onload = () => {
                         createUnityInstance(
                             canvas,
                             {
-                                dataUrl: 'Build/WEBGL.data.unityweb',
-                                frameworkUrl: 'Build/WEBGL.framework.js.unityweb',
-                                codeUrl: 'Build/WEBGL.wasm.unityweb',
+                                dataUrl: 'Build/WebGL.data.unityweb',
+                                frameworkUrl: 'Build/WebGL.framework.js.unityweb',
+                                codeUrl: 'Build/WebGL.wasm.unityweb',
                                 streamingAssetsUrl: 'StreamingAssets',
                                 companyName: 'cheOGames',
                                 productName: 'Alyonushka_s Adventures',
-                                productVersion: '1.0.7',
+                                productVersion: '1.0.11',
                                 // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                                 // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
                             },
@@ -524,7 +524,7 @@
 
             window.leaderboardGetEntries = function(options) {
                 bridge.leaderboard.getEntries(JSON.parse(options))
-                    .then(data => {
+					.then(data => {
                         if (data) {
                             if (typeof data !== 'string') {
                                 data = JSON.stringify(data)
